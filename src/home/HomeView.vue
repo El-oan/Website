@@ -53,9 +53,10 @@
 
         <div class="card">
           <img
-            src="/karacter/KaracterLogo.png"
-            alt="Karacter logo"
+            src="/icons/karacter.png"
+            alt="Karacter app icon"
             class="card-logo"
+            loading="lazy"
           />
           <div class="card-title">Karacter — define Chinese</div>
           <div class="card-meta">iOS • Live on the App Store</div>
@@ -72,11 +73,49 @@
               <span class="tag">XCode</span>
               <span class="tag">Coffee</span>
             </div>
-            <a class="card-button" href="/karacter/">文 website</a>
+            <a
+              class="card-button"
+              href="https://karacter.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              website
+            </a>
           </div>
         </div>
 
         <div class="card">
+          <div class="card-title">Radar Points Cloud ML Classification</div>
+          <div class="card-meta">Machine Learning • Personal project</div>
+          <div class="card-desc">
+            Reproduced, tweaked, and benchmarked several architectures for classifying 3D radar point clouds into human-activity
+            classes (sitting, boxing, etc...). Focused primarily on PointNet and DGCNN (graph-based) variants. 
+            Experimented with Attention layers, muon optimizer, weight decay, BN momentum, and hyperparameters space search.
+          </div>
+          <div class="tags-row">
+            <div class="tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">PointNet</span>
+              <span class="tag">DGCNN</span>
+            </div>
+            <a
+              class="card-button"
+              href="https://github.com/El-oan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="/icons/focustrain.png"
+            alt="Focus Train app icon"
+            class="card-logo"
+            loading="lazy"
+          />
           <div class="card-title">Focus Train: study timer</div>
           <div class="card-meta">cross platform • Live on the App Store</div>
           <div class="card-desc">
@@ -113,7 +152,7 @@
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">PyTorch</span>
-              <span class="tag">Jupyter</span>
+              <span class="tag">NLP</span>
             </div>
             <a class="card-button" href="/notebook">notebook</a>
           </div>
@@ -146,21 +185,60 @@
         </h2>
 
         <div class="card">
+          <img
+            src="/icons/magen.jpeg"
+            alt="Magen Financial logo"
+            class="card-logo"
+            loading="lazy"
+          />
+          <div class="card-title">Machine Learning Engineer</div>
+          <div class="card-meta">Magen Financial • New York • Sep 2026 - Feb 2027</div>
+          <div class="card-desc">
+            Joining Magen Financial in New York for a six-month internship, applying my machine-learning and
+            data-processing experience in a financial-services environment.
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="/icons/forvismazars.jpg"
+            alt="Forvis Mazars logo"
+            class="card-logo"
+            loading="lazy"
+          />
           <div class="card-title">Data Internship</div>
-          <div class="card-meta">Forvis Mazars • Paris • sep 2025 - feb 2026</div>
-          <div class="card-desc">Semester internship where I worked as a Data Engineer + Full-Stack dev.</div>
+          <div class="card-meta">Forvis Mazars • Paris • Sep 2025 - Feb 2026</div>
+          <div class="card-desc">
+            Worked as a Data Engineer and Full-Stack Developer on local LLM agents with Docker and RAG, a data
+            visualization web app, and the migration of a 100+ step SAS pipeline to Dataiku.
+          </div>
         </div>
 
         <div class="card">
-          <div class="card-title">Communication lead, Mountain Club</div>
+          <div class="card-title">Communication Lead, Mountain Club</div>
           <div class="card-meta">CentraleSupélec • 2024 - 2025</div>
-          <div class="card-desc">Managed the club's communication and image. Designed assets and communication mediums.</div>
+          <div class="card-desc">
+            Managed the club's external communications and brand identity, producing visual assets for outdoors
+            events and communication channels throughout the year.
+          </div>
         </div>
 
         <div class="card">
-          <div class="card-title">Sponsorship lead, Bouldering Club</div>
+          <div class="card-title">Sponsorship Lead, Bouldering Club</div>
           <div class="card-meta">CentraleSupélec • 2024 - 2025</div>
-          <div class="card-desc">Approached companies to establish partnerships. Raised funds and secured equipment for competition prizes.</div>
+          <div class="card-desc">
+            Developed corporate partnerships for France's largest student climbing competition, securing 9 sponsors
+            including Petzl to fund the event and provide prizes.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">English Debating Club Member</div>
+          <div class="card-meta">CentraleSupélec • 2024 - 2025</div>
+          <div class="card-desc">
+            Trained weekly with a professional debating coach and competed in 5v5 English debates, both internally and
+            against other schools.
+          </div>
         </div>
       </div>
 
@@ -172,25 +250,35 @@
         </h2>
 
         <div class="card">
+          <img
+            src="/icons/centralesupelec.png"
+            alt="CentraleSupélec logo"
+            class="card-logo"
+            loading="lazy"
+          />
           <div class="card-title">CentraleSupélec</div>
           <div class="card-meta">2023 - 2027 • Paris-Saclay</div>
           <div class="card-desc">
             MEng at CentraleSupélec, 1st European Engineering School (Shanghai ranking). Ranked 100th/6000+ in national
-            entrance exam. Advanced Mathematics, Machine Learning, Time Series Econometrics, Quantum Physics, etc. I hate this school.
+            entrance exam. Advanced Mathematics, Machine Learning, Time Series Econometrics, Quantum Physics, etc.
           </div>
         </div>
 
         <div class="card">
           <div class="card-title">Tongji University</div>
           <div class="card-meta">2025 • Shanghai</div>
-          <div class="card-desc">Exchange program at 同济大学 for 6 months. Civil Engineering.</div>
+          <div class="card-desc">
+            Completed a six-month Civil Engineering exchange in Shanghai ; first contact with Chinese culture and 
+            language.
+          </div>
         </div>
 
         <div class="card">
           <div class="card-title">Lycée Louis-le-Grand</div>
           <div class="card-meta">2022 - 2023 • Paris</div>
           <div class="card-desc">
-            Classes Préparatoires. Intensive study of mathematics, physics, and chemistry.
+            Third year of intensive cram school for France's Grandes Écoles, ranking fifth in class while studying
+            advanced mathematics, physics, and chemistry.
           </div>
         </div>
       </div>
@@ -246,9 +334,9 @@ const typedSectionTitles = reactive({
 });
 
 const introText = [
-  "Hi! I'm a 23-year-old engineering student at CentraleSupélec Paris-Saclay, graduating in 2027. I studied a semester in 上海 (Shanghai) and I am currently based in Paris.",
-  "I love design, languages and coffee shops. I speak English and French, and I'm learning Chinese (Russian too, but if I start a Russian sentence I end up speaking Chinese). I recently discovered I really enjoy machine learning too.",
-  "I spent most of my life in the west of France, and 6 months in China. I'd love to travel around the world. Don't hesitate to reach out!"
+  "Hi! I'm a 23-year-old engineering student at CentraleSupélec Paris-Saclay, graduating in 2027. I studied a semester in Shanghai and I am currently based in Paris.",
+  "I love machine learning, languages and design. I speak English and French, and I'm learning Chinese (Russian too, but if I start a Russian sentence I end up speaking Chinese).",
+  "I spent most of my life in the west of France, and 6 months in China. I love to travel around. Do not hesitate to reach out!"
 ].join('\n\n');
 const sectionTitleText = {
   experiences: 'Experiences',

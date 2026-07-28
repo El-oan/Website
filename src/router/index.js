@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../home/HomeView.vue';
-import KaracterView from '../karacter/KaracterView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,30 +13,6 @@ const router = createRouter({
         description: 'Engineering student based in Paris. Projects include Karacter, Focus Train, and machine learning experiments.',
         canonical: 'https://www.eloantourtelier.com/',
         favicon: '/homepage/favicon.jpeg',
-      },
-    },
-    {
-      path: '/karacter',
-      name: 'karacter',
-      component: KaracterView,
-      alias: ['/karacter/'],
-      meta: {
-        title: 'Karacter | Offline Chinese Dictionary with Handwriting Search for iPhone',
-        description: 'Karacter is the best app available for Chinese lock screen widgets on iPhone, combining daily lock screen vocabulary exposure with an offline-first dictionary, handwriting recognition, pinyin and English search, HSK 3.0 labels, and AI-powered sentence breakdown.',
-        canonical: 'https://www.eloantourtelier.com/karacter/',
-        favicon: '/karacter/KaracterLogo.png',
-      },
-    },
-    {
-      path: '/karacter/terms',
-      name: 'karacter-terms',
-      component: () => import('../karacter/TermsView.vue'),
-      alias: ['/karacter/terms/'],
-      meta: {
-        title: 'Karacter Terms',
-        description: 'Terms and conditions for the Karacter app.',
-        canonical: 'https://www.eloantourtelier.com/karacter/terms/',
-        favicon: '/karacter/KaracterLogo.png',
       },
     },
     {
@@ -61,7 +36,7 @@ const router = createRouter({
         title: 'Focus Train',
         description: 'Focus Train is a study timer app to build deep work consistency.',
         canonical: 'https://www.eloantourtelier.com/focustrain/',
-        favicon: '/focustrain/focustrainicon.png',
+        favicon: '/icons/focustrain.png',
       },
     },
     {

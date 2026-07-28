@@ -15,7 +15,6 @@ router.afterEach((to) => {
 });
 
 import './home/home.css';
-import './karacter/karacter.css';
 
 const app = createApp(App);
 

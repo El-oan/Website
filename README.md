@@ -7,7 +7,7 @@ This website is meant to be a less cluttered/prettier version of my linkedin, an
 This repository contains the source code for my personal website.
 
 - **Status:** stable
-- **Links:** [Homepage](https://eloantourtelier.com), [Karacter App](https://www.eloantourtelier.com/karacter/), [Focus Train App](https://www.eloantourtelier.com/focustrain/)
+- **Links:** [Homepage](https://eloantourtelier.com), [Karacter App](https://karacter.app/), [Focus Train App](https://www.eloantourtelier.com/focustrain/)
 
 ## Tools
 

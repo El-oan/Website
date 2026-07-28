@@ -1,19 +1,11 @@
 {
   "/": {
-    "signature": "48f53a0b78db7187d4711d33bee20ce5cea47a128af815c76aa175cf0531413e",
-    "lastmod": "2026-04-06"
-  },
-  "/karacter/": {
-    "signature": "6ec7dba0d531f6e41af3a4abb00d5f60265ec954c5911db1af02218813c37134",
-    "lastmod": "2026-04-06"
-  },
-  "/karacter/terms/": {
-    "signature": "71fdea00ed7efe8f80a77e0628e094510df7362185d1115c2d73af60cbac3a09",
-    "lastmod": "2026-04-05"
+    "signature": "51fd25566d947c7b40755713ed4d24b70f577ab3dbbdf3fc541fb2f3c98426b7",
+    "lastmod": "2026-07-28"
   },
   "/focustrain/": {
-    "signature": "624e5e903d6c32b1a233615bee8c57a3eb3ef4a9feaedd69d38403a4a10193df",
-    "lastmod": "2026-04-05"
+    "signature": "423c16f3beea08151fd76feab370e65e813b7f8e058516e146c1fbe1a3ef0914",
+    "lastmod": "2026-07-28"
   },
   "/notebook/": {
     "signature": "40eefe9ef19499d8c4297bb53ae0cbbf3e17e010e87988d2bf24473870c92636",

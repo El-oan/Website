@@ -16,18 +16,6 @@ const pages = [
     files: ['index.html', 'src/home/HomeView.vue', 'src/home/home.css'],
   },
   {
-    path: '/karacter/',
-    changefreq: 'weekly',
-    priority: '1.0',
-    files: ['karacter/index.html', 'src/karacter/KaracterView.vue', 'src/karacter/karacter.css'],
-  },
-  {
-    path: '/karacter/terms/',
-    changefreq: 'monthly',
-    priority: '0.1',
-    files: ['karacter/terms/index.html', 'src/karacter/TermsView.vue'],
-  },
-  {
     path: '/focustrain/',
     changefreq: 'monthly',
     priority: '0.6',

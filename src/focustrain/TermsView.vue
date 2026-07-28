@@ -12,7 +12,7 @@
 
     <main class="container">
       <section class="hero" style="text-align: left; max-width: 800px; padding-bottom: 40px;">
-        <img src="/focustrain/focustrainicon.png" alt="Focus Train" class="app-icon" style="margin-bottom: 24px;" />
+        <img src="/icons/focustrain.png" alt="Focus Train" class="app-icon" style="margin-bottom: 24px;" />
         <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 40px;">Terms and Conditions</h1>
         
         <div class="terms-content">
