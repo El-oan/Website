@@ -59,7 +59,7 @@
             loading="lazy"
           />
           <div class="card-title">Karacter — define Chinese</div>
-          <div class="card-meta">iOS • Live on the App Store</div>
+          <div class="card-meta">iOS • 25k+ LOC • Live on the App Store</div>
           <div class="card-desc">
             An offline Chinese learning helper with character drawing recognition, HSK 3.0 labeling, AI-powered sentence
             analysis. You can search for any Chinese word, expression, pinyin, English term — or hand-draw any character
@@ -86,7 +86,7 @@
 
         <div class="card">
           <div class="card-title">Radar Points Cloud ML Classification</div>
-          <div class="card-meta">Machine Learning • Personal project</div>
+          <div class="card-meta">Deep Learning • School semester project</div>
           <div class="card-desc">
             Reproduced, tweaked, and benchmarked several architectures for classifying 3D radar point clouds into human-activity
             classes (sitting, boxing, etc...). Focused primarily on PointNet and DGCNN (graph-based) variants. 
@@ -140,17 +140,16 @@
 
         <div class="card">
           <div class="card-title">Attention Network</div>
-          <div class="card-meta">Machine Learning • Work in progress</div>
+          <div class="card-meta">Deep Learning • Personal experimentation</div>
           <div class="card-desc">
             An implementation of the Transformer architecture, following the 
             <em>Attention Is All You Need</em> paper, with some newer architectures. 
             Uses multi-head attention, Deepseek's 
-            mHC connections, RMS normalization, Engram with with multi-head hashing. Trained on Kaggle's GPUs.
+            mHC connections, RMS normalization, Engram with multi-head hashing. Trained on Kaggle's GPUs.
             Work in progress.
           </div>
           <div class="tags-row">
             <div class="tags">
-              <span class="tag">Python</span>
               <span class="tag">PyTorch</span>
               <span class="tag">NLP</span>
             </div>
@@ -209,8 +208,10 @@
           <div class="card-title">Data Internship</div>
           <div class="card-meta">Forvis Mazars • Paris • Sep 2025 - Feb 2026</div>
           <div class="card-desc">
-            Worked as a Data Engineer and Full-Stack Developer on local LLM agents with Docker and RAG, a data
-            visualization web app, and the migration of a 100+ step SAS pipeline to Dataiku.
+            Worked as a Data Engineer and Full-Stack Developer on mutiple client and internal projects.
+            Experimented with local LLM agents (Docker model) and RAG, an online heavy data
+            visualization web app, the migration of a SAS pipeline (100+ step) to Dataiku, an HR PowerPoint
+            app, and more.
           </div>
         </div>
 
@@ -257,7 +258,7 @@
             loading="lazy"
           />
           <div class="card-title">CentraleSupélec</div>
-          <div class="card-meta">2023 - 2027 • Paris-Saclay</div>
+          <div class="card-meta">sep 2023 - apr 2027 • Paris-Saclay University</div>
           <div class="card-desc">
             MEng at CentraleSupélec, 1st European Engineering School (Shanghai ranking). Ranked 100th/6000+ in national
             entrance exam. Advanced Mathematics, Machine Learning, Time Series Econometrics, Quantum Physics, etc.
@@ -266,7 +267,7 @@
 
         <div class="card">
           <div class="card-title">Tongji University</div>
-          <div class="card-meta">2025 • Shanghai</div>
+          <div class="card-meta">feb 2025 - Jun 2025 • Shanghai</div>
           <div class="card-desc">
             Completed a six-month Civil Engineering exchange in Shanghai ; first contact with Chinese culture and 
             language.
@@ -275,7 +276,7 @@
 
         <div class="card">
           <div class="card-title">Lycée Louis-le-Grand</div>
-          <div class="card-meta">2022 - 2023 • Paris</div>
+          <div class="card-meta">sep 2022 - Jun 2023 • Paris</div>
           <div class="card-desc">
             Third year of intensive cram school for France's Grandes Écoles, ranking fifth in class while studying
             advanced mathematics, physics, and chemistry.
@@ -473,7 +474,7 @@ onMounted(() => {
       antiFreqDiag: 0.045 + layerIndex * 0.002,
       antiPeakCenter: 0.93 - (layerIndex % 3) * 0.015,
       antiPeakWidth: 0.055 + (layerIndex % 2) * 0.008,
-      fill: `rgba(${Math.max(38, baseRed - layerIndex * 2)}, ${Math.max(48, baseGreen - layerIndex * 2)}, ${Math.max(150, baseBlue - layerIndex * 5)}, ${Math.max(0.12, 0.42 - layerIndex * 0.025)})`
+      fill: `rgba(${Math.max(38, baseRed - layerIndex * 2)}, ${Math.max(48, baseGreen - layerIndex * 2)}, ${Math.max(150, baseBlue - layerIndex * 5)}, ${Math.max(0.1, 0.36 - layerIndex * 0.022)})`
     };
   });
   
