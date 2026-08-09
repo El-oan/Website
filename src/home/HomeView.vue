@@ -1,44 +1,84 @@
 <template>
-  <div class="home-wrapper" :class="{ 'nav-open': isNavOpen }">
+  <div class="home-wrapper" :data-theme="theme">
     <canvas 
       ref="bgCanvas" 
       class="bg-canvas"
     ></canvas>
     <nav
-      class="sidebar"
+      class="section-nav"
       :class="{ 'is-open': isNavOpen }"
       aria-label="Section navigation"
       @mouseenter="openNav"
       @mouseleave="closeNav"
       @focusin="openNav"
       @focusout="handleNavFocusOut"
+      @keydown.esc="closeNav"
     >
-      <div class="side-inner">
-        <a class="side-item" href="#about">
-          <span class="side-bar" aria-hidden="true"></span>
-          <span class="side-text">About</span>
-        </a>
-        <a class="side-item" href="#projects">
-          <span class="side-bar" aria-hidden="true"></span>
-          <span class="side-text">Projects</span>
-        </a>
-        <a class="side-item" href="#experiences">
-          <span class="side-bar" aria-hidden="true"></span>
-          <span class="side-text">Experiences</span>
-        </a>
-        <a class="side-item" href="#education">
-          <span class="side-bar" aria-hidden="true"></span>
-          <span class="side-text">Education</span>
-        </a>
-        <a class="side-item" href="#connect">
-          <span class="side-bar" aria-hidden="true"></span>
-          <span class="side-text">Reach Out</span>
-        </a>
+      <div class="nav-bars">
+        <a
+          v-for="item in sectionLinks"
+          :key="`bar-${item.id}`"
+          class="nav-bar-link"
+          :class="{ 'is-active': activeSection === item.id }"
+          :href="`#${item.id}`"
+          :aria-label="`Go to ${item.label}`"
+          :aria-current="activeSection === item.id ? 'location' : undefined"
+          @click="closeNav"
+        ></a>
+      </div>
+
+      <div
+        class="nav-menu"
+        :aria-hidden="!isNavOpen"
+        :inert="isNavOpen ? undefined : ''"
+      >
+        <div class="nav-menu-surface">
+          <a
+            v-for="item in sectionLinks"
+            :key="`menu-${item.id}`"
+            class="nav-menu-item"
+            :class="{ 'is-active': activeSection === item.id }"
+            :href="`#${item.id}`"
+            :aria-current="activeSection === item.id ? 'location' : undefined"
+            @click="closeNav"
+          >
+            <span>{{ item.label }}</span>
+          </a>
+        </div>
       </div>
     </nav>
-    <div class="blur-scrim" aria-hidden="true"></div>
 
     <div class="home-container">
+      <div
+        class="theme-switch"
+        :class="{ 'is-dark': theme === 'dark' }"
+        role="group"
+        aria-label="Choose website appearance"
+      >
+        <span class="theme-switch-indicator" aria-hidden="true"></span>
+        <button
+          type="button"
+          class="theme-option"
+          :class="{ 'is-active': theme === 'light' }"
+          :aria-pressed="theme === 'light'"
+          aria-label="Use light mode"
+          title="Light mode"
+          @click="setTheme('light')"
+        >
+          <span class="material-symbols-rounded theme-icon" aria-hidden="true">light_mode</span>
+        </button>
+        <button
+          type="button"
+          class="theme-option"
+          :class="{ 'is-active': theme === 'dark' }"
+          :aria-pressed="theme === 'dark'"
+          aria-label="Use dark mode"
+          title="Dark mode"
+          @click="setTheme('dark')"
+        >
+          <span class="material-symbols-rounded theme-icon" aria-hidden="true">dark_mode</span>
+        </button>
+      </div>
       <h1 class="page-title">Eloan Tourtelier</h1>
       <p class="subtitle">Engineering Student</p>
 
@@ -254,7 +294,7 @@
           <img
             src="/icons/centralesupelec.png"
             alt="CentraleSupélec logo"
-            class="card-logo"
+            class="card-logo card-logo--white-bg"
             loading="lazy"
           />
           <div class="card-title">CentraleSupélec</div>
@@ -326,8 +366,55 @@ let cleanup;
 let colorSchemeMediaQuery = null;
 let handleColorSchemeChange = null;
 
+const THEME_STORAGE_KEY = 'portfolio-theme';
+
+function getStoredTheme() {
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : null;
+  } catch {
+    return null;
+  }
+}
+
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+const storedTheme = getStoredTheme();
+const theme = ref(storedTheme || getSystemTheme());
+let hasThemeOverride = storedTheme !== null;
+
+function applyThemeToDocument() {
+  document.body.style.backgroundColor = theme.value === 'light' ? '#fcfcfd' : '#000000';
+  document.documentElement.style.colorScheme = theme.value;
+}
+
+function setTheme(nextTheme) {
+  if (nextTheme !== 'light' && nextTheme !== 'dark') return;
+
+  theme.value = nextTheme;
+  hasThemeOverride = true;
+
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  } catch {
+    // The selected theme still applies for this visit when storage is unavailable.
+  }
+
+  applyThemeToDocument();
+}
+
 const bgCanvas = ref(null);
 const isNavOpen = ref(false);
+const activeSection = ref('about');
+const sectionLinks = [
+  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experiences', label: 'Experiences' },
+  { id: 'education', label: 'Education' },
+  { id: 'connect', label: 'Reach Out' }
+];
 const typedSectionTitles = reactive({
   experiences: '',
   education: '',
@@ -421,9 +508,12 @@ function handleNavFocusOut(event) {
 onMounted(() => {
   colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
   handleColorSchemeChange = (event) => {
-    document.body.style.backgroundColor = event.matches ? '#fcfcfd' : '#000000';
+    if (hasThemeOverride) return;
+
+    theme.value = event.matches ? 'light' : 'dark';
+    applyThemeToDocument();
   };
-  handleColorSchemeChange(colorSchemeMediaQuery);
+  applyThemeToDocument();
   colorSchemeMediaQuery.addEventListener('change', handleColorSchemeChange);
   setupSectionTitleTypewriters();
 
@@ -525,13 +615,12 @@ onMounted(() => {
     cancelAnimationFrame(animationFrame);
   };
 
-  const links = Array.from(document.querySelectorAll('.side-item'));
-  const ids = links.map((a) => a.getAttribute('href')).filter((h) => h && h.startsWith('#'));
-
-  const sections = ids.map((id) => document.querySelector(id)).filter(Boolean);
+  const sections = sectionLinks
+    .map(({ id }) => document.getElementById(id))
+    .filter(Boolean);
 
   function activate(id) {
-    links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === id));
+    activeSection.value = id;
   }
 
   const pickActive = () => {
@@ -540,7 +629,7 @@ onMounted(() => {
       if (sections.length > 0) {
         const last = sections[sections.length - 1];
         if (last?.id) {
-          activate(`#${last.id}`);
+          activate(last.id);
           return;
         }
       }
@@ -553,7 +642,7 @@ onMounted(() => {
       if (top <= y) best = s;
       else break;
     }
-    if (best?.id) activate(`#${best.id}`);
+    if (best?.id) activate(best.id);
   };
 
   let raf = 0;
@@ -578,6 +667,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.body.style.backgroundColor = '';
+  document.documentElement.style.colorScheme = '';
   if (colorSchemeMediaQuery && handleColorSchemeChange) {
     colorSchemeMediaQuery.removeEventListener('change', handleColorSchemeChange);
   }

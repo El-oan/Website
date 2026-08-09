@@ -9,8 +9,8 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Eloan Tourtelier | Engineering Student and Projects',
-        description: 'Engineering student based in Paris. Projects include Karacter, Focus Train, and machine learning experiments.',
+        title: 'Eloan Tourtelier - portfolio',
+        description: 'Engineering student based in Paris. Projects include ios apps such Karacter, and machine learning experiments.',
         canonical: 'https://www.eloantourtelier.com/',
         favicon: '/homepage/favicon.jpeg',
       },
