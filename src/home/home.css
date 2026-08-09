@@ -21,10 +21,10 @@
   --card-hover-border: rgba(84, 104, 255, 0.75);
   --nav-bar-color: #666666;
   --nav-active-color: #ffffff;
-  --nav-menu-bg: #303030;
-  --nav-menu-accent: #4a4a4a;
+  --nav-menu-bg: #191919;
+  --nav-menu-accent: #343434;
   --nav-menu-text: #f2f2f2;
-  --nav-menu-item-hover: #3d3d3d;
+  --nav-menu-item-hover: #2a2a2a;
   --theme-switch-bg: #303030;
   --theme-switch-border: #4a4a4a;
   --theme-switch-active-bg: #4a4a4a;
@@ -36,7 +36,8 @@
       rgba(0, 0, 0, 0.95) 80%,
       rgba(0, 0, 0, 0.4) 95%,
       rgba(0, 0, 0, 0) 100%);
-  --tag-bg: #3d3d3d;
+  --tag-bg: #000000;
+  --tag-border: rgba(255, 255, 255, 0.15);
   --container: 1200px;
   --radius: 1px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -465,7 +466,7 @@ html {
   background: var(--tag-bg);
   border-radius: 6px;
   color: var(--accent-1);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--tag-border);
 }
 
 .home-wrapper[data-theme='light'] {
@@ -507,6 +508,7 @@ html {
       rgba(255, 255, 255, 0.58) 95%,
       rgba(255, 255, 255, 0) 100%);
   --tag-bg: rgba(15, 23, 42, 0.03);
+  --tag-border: rgba(15, 23, 42, 0.14);
 }
 
 .home-wrapper .card-button {
